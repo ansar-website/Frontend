@@ -1,0 +1,419 @@
+.dashboardSidebar.male {
+  --mc: #007a8c;
+}
+.dashboardSidebar.female {
+  --mc: #cc9999;
+}
+.dashboardSidebar {
+  --mc: #007a8c;
+  background-color: var(--mc);
+  color: #fff;
+  width: 345px;
+  position: sticky;
+  height: calc(100vh - 120px);
+  top: 120px;
+  justify-content: flex-start;
+  padding: 35px 0px;
+  overflow-y: scroll;
+  transition: all 0.2s ease;
+  @media (max-width: 1400px) {
+    position: fixed;
+    height: 100vh;
+    top: 0px;
+    right: 0px;
+    padding-top: 155px;
+  }
+  @media (max-width: 880px) {
+    padding-top: 130px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  .collapse {
+    margin-bottom: -24px;
+    padding-left: 25px;
+    @media (max-width: 1400px) {
+      display: none;
+    }
+  }
+
+  .userImg {
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    width: 140px !important;
+    height: 140px !important;
+  }
+
+  .sideLinks {
+    width: 100%;
+    padding-right: 40px;
+    padding-top: 30px;
+
+    .sideLink {
+      width: 100%;
+      padding: 22px;
+      padding-right: 28px;
+      padding-left: 0px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      transition: all 0.2s ease;
+      position: relative;
+
+      .linkText {
+        text-align: right;
+        color: #fff;
+      }
+
+      .linkIcon {
+        display: block;
+        position: relative;
+        bottom: -4px;
+        width: 24px;
+        height: 24px;
+      }
+
+      &.activeLink {
+        background-color: #fff;
+
+        .linkText {
+          color: var(--mc);
+        }
+
+        svg {
+          path {
+            fill: var(--mc);
+          }
+        }
+
+        &::after {
+          content: '';
+          background: var(--mc);
+          height: 22px;
+          width: 22px;
+          position: absolute;
+          bottom: calc(-22px);
+          left: 0;
+          border-radius: 0 9px 0 0;
+          box-shadow: 0 -14.5px 0 0 #ffffff;
+          transform: rotate(-90deg);
+        }
+
+        &::before {
+          content: '';
+          background: var(--mc);
+          height: 2em;
+          width: 2em;
+          position: absolute;
+          top: -2em;
+          left: 0em;
+          border-radius: 0 0 9px 0;
+          box-shadow: 0 14.5px 0 0 #ffffff;
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  .ant-upload.ant-upload-select {
+    border: 0px !important;
+    padding: 0px !important;
+    border-radius: 50%;
+  }
+
+  .updateImg {
+    width: 130px;
+    height: 130px;
+    @extend .flex_row_c;
+    position: relative;
+    // reset spiner bg
+    .ant-spin-nested-loading .ant-spin-container::after {
+      background: transparent;
+    }
+
+    .pin {
+      opacity: 0;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      transition: all 0.2s ease;
+      color: #fff;
+      background: #333;
+      width: 30px;
+      height: 30px;
+      z-index: 3;
+      cursor: pointer;
+      @extend .flex_row_c;
+      border-radius: 50%;
+
+      svg {
+        font-size: 20px;
+      }
+    }
+
+    &:hover {
+      &::after,
+      .pin {
+        opacity: 1;
+      }
+    }
+
+    .ant-upload-wrapper {
+      height: 130px;
+
+      .ant-upload {
+        width: 130px;
+        height: 130px;
+      }
+    }
+  }
+
+  &.collapsedSide {
+    width: 95px;
+    overflow-x: hidden;
+
+    .collapse {
+      justify-content: center;
+      margin-bottom: 52px;
+      padding-left: 0px;
+    }
+
+    .userTextData {
+      display: none;
+    }
+
+    .userImg {
+      width: 45px !important;
+      height: 45px !important;
+    }
+
+    .updateImg {
+      width: 45px;
+      height: 45px;
+      @extend .flex_row_c;
+
+      .ant-upload-wrapper {
+        height: 45px;
+
+        .ant-upload {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+
+    .sideLinks {
+      padding-top: 95px;
+      padding-right: 28px;
+
+      .sideLink {
+        padding-right: 20px;
+        position: relative;
+        height: 68px;
+
+        &.activeLink {
+          border-top-right-radius: 50px;
+          border-bottom-right-radius: 50px;
+
+          .linkText {
+            display: none;
+          }
+
+          .linkIcon {
+            bottom: 0px;
+          }
+
+          &::after,
+          &::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 0;
+            width: 20px;
+            height: 50px;
+            border-radius: 0 0 25px 0;
+            z-index: -1;
+            animation: show 0.2s ease;
+            transition: all 0.2s ease;
+          }
+
+          @keyframes show {
+            from {
+              opacity: 0;
+            }
+
+            to {
+              opacity: 1;
+            }
+          }
+
+          &::before {
+            top: auto;
+            bottom: -34.5px;
+            transform: rotate(-90deg);
+            border-radius: 0 25px 0 0;
+            right: calc(29.8px + 2px);
+          }
+
+          &::after {
+            box-shadow: 0 25px 0 0 #fdfff4;
+            transform: rotate(90deg);
+            top: -35px;
+            right: calc(29.8px + 2px);
+          }
+
+          &::before {
+            box-shadow: 0 -25px 0 0 #fdfff4;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1400px) {
+    width: 95px;
+    overflow-x: hidden;
+    .collapse {
+      justify-content: center;
+      margin-bottom: 52px;
+      padding-left: 0px;
+    }
+
+    .userTextData {
+      display: none;
+    }
+
+    .userImg {
+      width: 45px !important;
+      height: 45px !important;
+    }
+
+    .updateImg {
+      width: 45px;
+      height: 45px;
+      @extend .flex_row_c;
+
+      .ant-upload-wrapper {
+        height: 45px;
+
+        .ant-upload {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+
+    .sideLinks {
+      padding-top: 95px;
+      padding-right: 28px;
+
+      .sideLink {
+        padding-right: 20px;
+        position: relative;
+        height: 68px;
+
+        &.activeLink {
+          border-top-right-radius: 50px;
+          border-bottom-right-radius: 50px;
+
+          .linkText {
+            display: none;
+          }
+
+          .linkIcon {
+            bottom: 0px;
+          }
+
+          &::after,
+          &::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 0;
+            width: 20px;
+            height: 50px;
+            border-radius: 0 0 25px 0;
+            z-index: -1;
+            animation: show 0.2s ease;
+            transition: all 0.2s ease;
+          }
+
+          @keyframes show {
+            from {
+              opacity: 0;
+            }
+
+            to {
+              opacity: 1;
+            }
+          }
+
+          &::before {
+            top: auto;
+            bottom: -34.5px;
+            transform: rotate(-90deg);
+            border-radius: 0 25px 0 0;
+            right: calc(29.8px + 2px);
+          }
+
+          &::after {
+            box-shadow: 0 25px 0 0 #fdfff4;
+            transform: rotate(90deg);
+            top: -35px;
+            right: calc(29.8px + 2px);
+          }
+
+          &::before {
+            box-shadow: 0 -25px 0 0 #fdfff4;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 760px) {
+    display: none !important;
+  }
+}
+
+.dsProfile {
+  padding-right: 0px;
+  .sideLink {
+    gap: 5px;
+    align-items: center;
+    padding: 10px 20px;
+    padding-right: 30px;
+    margin-top: 0px;
+    .linkText {
+      color: $mc;
+      margin-top: -5px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .linkIcon {
+      margin-bottom: -5px;
+      margin-left: 7px;
+      svg {
+        width: 20px;
+        path {
+          fill: $mc;
+        }
+      }
+    }
+    &.activeLink {
+      background: $mc;
+      .linkText {
+        color: #fff;
+      }
+      .linkIcon {
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+  }
+  .ant-spin-nested-loading {
+    width: fit-content;
+  }
+}

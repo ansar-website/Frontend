@@ -1,0 +1,80 @@
+
+.meeting-login-hint
+
+{
+    text-align: center;
+    a{
+text-align: center;
+background: #007a8c;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+color:white;
+padding: 10px;
+font-size: 20px;
+
+}
+}
+.meeting-end-hint{
+      visibility: hidden;
+}
+
+
+.zoom-container{
+
+
+#zmmtg-root{
+    background: unset !important;
+    background-image: url('../../../public/images/head-bg.png') !important;
+    background-size: cover !important;
+
+    .root-inner{
+     
+        #content{
+               
+    background: unset !important;
+    background-image: url('../../../public/images/head-bg.png') !important;
+    background-size: cover !important;
+        }
+}
+
+}
+
+#content_container {
+    background: unset !important;
+//  background-image: url('../../../public/images/head-bg.png') !important;
+//     background-size: cover !important;
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+// .meeting-client-inner{
+//      width: 88vw !important;
+//     height: 80vh !important;
+//     margin-top: 10%;
+//     margin-left: 10%;
+// }
+// #zmmtg-root{    
+//     width: 88vw !important;
+//     height: 80vh !important;
+//     margin-top: 25%;
+//     margin-left: 10%;
+//     z-index: 9998;
+// }
+
+
+// #content_container{
+//     background-color: transparent !important;
+// }
+
+
+
+
+

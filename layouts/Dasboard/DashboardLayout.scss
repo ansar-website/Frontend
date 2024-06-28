@@ -1,0 +1,97 @@
+@import '../../styles/globals.scss';
+@import '../../components/Dashboard/sidebar/sidebar.scss';
+@import '../../pages/dashboard/profile/profile.scss';
+@import '../../pages/dashboard/courses/courses.scss';
+@import '../../pages/dashboard/blogs/blogs.scss';
+@import '../../pages/dashboard/degrees/degrees.scss';
+@import '../../pages/dashboard/notes/notes.scss';
+
+// dashboard layout
+.dashboard-layout {
+  padding-top: 120px;
+  @media (max-width: 1400px) {
+    padding-right: 95px;
+  }
+  @media (max-width: 760px) {
+    padding-right: 0px;
+  }
+  .dashboardContainer {
+    margin: 0 50px;
+    flex-grow: 1;
+    transition: all 0.2s ease;
+    height: fit-content;
+    width: calc(100% - 345px - 100px);
+    @media (max-width: 1200px) {
+      margin: 0px 30px;
+    }
+    @media (max-width: 760px) {
+      margin: 0px 20px;
+    }
+
+    &.wideCont {
+      margin: 0px 150px;
+      width: calc(100% - 345px - 300px);
+      @media (max-width: 1200px) {
+        margin: 0px 30px;
+      }
+      @media (max-width: 760px) {
+        margin: 0px 20px;
+      }
+    }
+  }
+}
+
+.customWcModal {
+  .ant-modal {
+    .ant-modal-content {
+      padding: 0px;
+      padding-bottom: 50px;
+      box-shadow: 0px 5px 19px rgba(0, 0, 0, 0.5);
+      border-radius: 25px;
+      overflow: hidden;
+      .ant-modal-header {
+        padding: 20px;
+        padding-right: 43px;
+        padding-left: 72px;
+        border-bottom: 1px solid #000;
+        .ant-modal-title {
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 45px;
+          color: $mc;
+        }
+      }
+      .ant-modal-close {
+        left: 60px;
+        top: 30px;
+        &:hover,
+        &:focus,
+        &:active {
+          background: transparent;
+        }
+        svg {
+          font-size: 24px;
+          color: $svgColor;
+        }
+      }
+    }
+  }
+  &.waitingModal {
+    .ant-modal {
+      width: 600px !important;
+      @media (max-width: 650px) {
+        width: 100% !important;
+      }
+      .ant-modal-content {
+        .ant-modal-close {
+          left: 30px;
+        }
+      }
+    }
+  }
+}
+.noFooter {
+  .ant-modal-footer {
+    display: none;
+  }
+}

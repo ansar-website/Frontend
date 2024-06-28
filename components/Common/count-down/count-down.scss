@@ -1,0 +1,90 @@
+$countdown-bg-color: #f8f8f8;
+$countdown-font-color: #fff;
+$primary-color: #000;
+$secondary-color: #007a8c;
+
+.countdown {
+  background-color: $countdown-bg-color;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+
+  h1 {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: 1.5rem;
+  }
+
+  .countdown-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .countdown-item {
+    flex: 0 1 calc(25% - 1rem);
+    padding: 1rem;
+    background-color: $secondary-color;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    color: $countdown-font-color;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+
+    span {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: normal;
+      color: rgba(255, 255, 255, 0.8);
+      text-transform: uppercase;
+    }
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+// Media queries for responsive styles
+@media (max-width: 767px) {
+  .countdown {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .countdown-item {
+      flex: 0 1 calc(50% - 0.5rem);
+      font-size: 1.25rem;
+
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown {
+    padding: 1rem;
+
+    h1 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .countdown-item {
+      flex: 0 1 100%;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+  }
+}

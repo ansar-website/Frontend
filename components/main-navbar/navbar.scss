@@ -1,0 +1,378 @@
+@import '../../styles/globals.scss';
+$responsive: 1180px;
+
+.home-navbar {
+  position: absolute;
+  width: calc(100% - 20px);
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 6;
+  margin: 10px;
+  padding: 10px 30px;
+  transition: all 0.2s ease-in-out;
+
+  @media (max-width: 560px) {
+    padding: 0px 20px;
+  }
+
+  .logo {
+    &.green {
+      display: none;
+    }
+
+    @media (max-width: 880px) {
+      width: 200px;
+    }
+
+    @media (max-width: 520px) {
+      width: 115px;
+    }
+  }
+
+  .links {
+    margin-left: -100px;
+
+    @media (max-width: 1420px) {
+      margin-left: 0;
+    }
+
+    @media (max-width: 1320px) {
+      gap: 20px;
+    }
+
+    @media (max-width: $responsive) {
+      display: none;
+    }
+
+    .link {
+      padding: 0px 10px;
+      border-radius: 4px;
+      padding-bottom: 2px;
+    }
+
+    .activeLink {
+      background: #fff;
+      color: $mc;
+    }
+  }
+
+  .authLinks {
+    &.inDesktop {
+      @media (max-width: 1320px) {
+        gap: 20px;
+      }
+    }
+
+    .notifs {
+      margin-bottom: -12px;
+      margin-left: 15px;
+      sup {
+        right: 0px;
+        .current {
+          color: #fff;
+        }
+      }
+    }
+
+    .authLink {
+      padding: 7px 25px;
+      border-radius: 4px;
+
+      &.login {
+        border: 1px solid #fff;
+      }
+
+      &.register {
+        background: $green;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    @media (max-width: $responsive) {
+      display: none;
+    }
+
+    &.dashboardLink {
+      .black {
+        display: none;
+      }
+    }
+
+    .userName {
+      max-width: 140px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  // responsive
+  .drawerBtn {
+    @media (max-width: $responsive) {
+      display: block;
+    }
+  }
+  .dsProfileBtn {
+    @media (max-width: $responsive) {
+      display: flex;
+    }
+  }
+
+  .userAvatar {
+    border-radius: 50%;
+  }
+
+  &.activeNav {
+    background: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0px;
+    width: 100%;
+    position: fixed;
+    padding: 20px 30px;
+
+    @media (max-width: 768px) {
+      padding: 10px 20px;
+    }
+
+    &.activeTransparent {
+      background: transparent;
+      box-shadow: none;
+      padding-right: 77px;
+      padding-left: 112px;
+      position: absolute;
+
+      @media (max-width: 1400px) {
+        padding-right: 50px;
+        padding-left: 50px;
+      }
+
+      &.activeTransparentSticky {
+        background-color: #fff;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        padding: 20px 30px;
+        position: fixed;
+
+        .links {
+          margin-left: -100px;
+        }
+      }
+
+      .links {
+        margin-left: 0px;
+        gap: 23.5px;
+
+        @media (max-width: 1400px) {
+          gap: 15px;
+        }
+      }
+    }
+
+    .white {
+      display: none;
+    }
+
+    .green {
+      display: block;
+    }
+
+    .links {
+      .link {
+        color: $mc;
+      }
+
+      .activeLink {
+        background: $mc;
+        color: #fff;
+      }
+    }
+
+    .notifs {
+      margin-bottom: -4px;
+    }
+
+    .authLinks {
+      .authLink {
+        &.login {
+          border: 1px solid $mc;
+          color: $mc;
+        }
+      }
+    }
+
+    .dashboardLink {
+      span {
+        color: $mc;
+      }
+
+      .black {
+        display: block;
+      }
+
+      .white {
+        display: none;
+      }
+    }
+
+    .drawerBtn {
+      color: $mc;
+    }
+  }
+
+  .profileLinks {
+    position: absolute;
+    top: 100%;
+    width: 210px;
+    background: #fff;
+    box-shadow: -3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 0px 10px;
+    right: 0px;
+    padding-bottom: 10px;
+  }
+}
+
+.ant-drawer-content-wrapper {
+  @media (max-width: 450px) {
+    width: 90% !important;
+  }
+}
+
+.navDrawer {
+  .links {
+    gap: 30px;
+
+    .link {
+      width: 100%;
+
+      a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        background-color: $lightActive;
+        color: $mc;
+        color: $dtitle;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px;
+      }
+
+      &.activeLink {
+        a {
+          background-color: $mc;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .authLinks {
+    margin-top: 50px;
+    @extend .flex_row_c;
+    gap: 20;
+
+    a {
+      width: 50%;
+      display: block;
+    }
+
+    .notifs {
+      margin-bottom: -3px;
+      margin-left: 10px;
+
+      .green {
+        display: block;
+      }
+
+      .white {
+        display: none;
+      }
+    }
+
+    .authLink {
+      width: 100%;
+      border-radius: 5px;
+      display: block;
+      text-align: center;
+      padding: 15px 0;
+
+      &.login {
+        border: 2px solid $mc;
+        color: $mc;
+      }
+
+      &.register {
+        background: $mc;
+        color: #fff;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    &.dashboardLink {
+      .white {
+        display: none;
+      }
+
+      span {
+        color: $mc;
+      }
+
+      a {
+        width: fit-content;
+      }
+      .userAvatar {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+// notifications-container
+
+.notifications-dropdown {
+  position: fixed;
+  .notifications-container {
+    border-radius: 10px;
+    box-shadow: $shadow;
+    background-color: #fff;
+    width: 350px;
+    @media (max-width: 370px) {
+      width: 320px;
+    }
+    max-height: 400px;
+    overflow-y: scroll;
+    padding: 0px;
+    .ant-spin-nested-loading {
+      width: 100%;
+    }
+    .notifications {
+      border: 1px solid $lWhite;
+      margin-bottom: 20px;
+      background: $lWhite;
+      padding: 20px;
+      margin-bottom: 10px;
+      .wide {
+        width: 0%;
+      }
+      &.not-read {
+        h2 {
+          position: relative;
+          width: 100%;
+          &::after {
+            position: absolute;
+            content: '';
+            left: 0px;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: $error;
+            border-radius: 50%;
+          }
+        }
+        background: transparent;
+      }
+    }
+  }
+}

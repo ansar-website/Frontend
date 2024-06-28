@@ -1,0 +1,105 @@
+.profile-page {
+  margin: 80px 0;
+  background-color: #f8f8f8;
+  border-radius: 15px;
+  border: 0.5px solid rgba(0, 0, 0, 0.43);
+  padding: 32px 34px;
+  padding-bottom: 50px;
+  @media (max-width: 700px) {
+    padding-bottom: 50px;
+    padding: 20px 20px;
+    margin-top: 40px;
+  }
+  .head {
+    padding-bottom: 22px;
+    border-bottom: 1px solid #c1c1c1;
+    margin-bottom: 52px;
+    @media (max-width: 700px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .editProfile {
+    border-bottom: 1px solid #c1c1c1;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    .userInfo {
+      margin-bottom: 20px;
+      @media (max-width: 700px) {
+        gap: 20px;
+        border-bottom: 0px;
+        margin-bottom: 0px;
+      }
+      .infoItem {
+        @media (max-width: 700px) {
+          gap: 15px;
+          &:last-of-type {
+            flex-direction: column;
+          }
+        }
+      }
+      .infoProp {
+        min-width: 201px;
+        @media (max-width: 850px) {
+          font-size: 12px;
+          min-width: 144px;
+        }
+        @media (max-width: 700px) {
+          padding-top: 5px;
+          min-width: 60px;
+        }
+      }
+
+      .infoVal {
+        height: 40px;
+        @media (max-width: 700px) {
+          gap: 15px;
+        }
+      }
+    }
+
+    .ant-input,
+    .ant-picker {
+      color: rgba(0, 0, 0, 0.88);
+      font-weight: 500;
+      font-family: 'Cairo';
+      width: 231px;
+      height: 40px;
+
+      input {
+        &::placeholder {
+          color: rgba(0, 0, 0, 0.88);
+          font-weight: 500;
+          font-family: 'Cairo';
+          font-size: 16px;
+        }
+      }
+    }
+
+    .ant-input-disabled {
+      background: transparent;
+      border: 0px;
+      color: #000;
+      font-weight: 400;
+      padding: 0px;
+      cursor: text;
+    }
+    @media (max-width: 700px) {
+      .ant-form-item,
+      .ant-picker,
+      .ant-input,
+      .ant-select {
+        width: 180px !important;
+        min-width: 80px;
+      }
+    }
+    @media (max-width: 350px) {
+      .ant-form-item,
+      .ant-picker,
+      .ant-input,
+      .ant-select {
+        width: 140px !important;
+      }
+    }
+  }
+}
